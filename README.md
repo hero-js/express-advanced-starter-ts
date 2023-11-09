@@ -1,9 +1,9 @@
-# hero
+# express-advanced-starter-ts
 
 ![Express](https://img.shields.io/badge/Express-4.17.17-blue)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.1.6-blue)
 
-Advanced and powerfull starter for an express.js application (API or Web) with Typescript.
+A robust starting point for an Express.js application, whether it's for building an API or a web application, powered by TypeScript and utilizing the HeroJS packages.
 
 ## Table of Contents
 
