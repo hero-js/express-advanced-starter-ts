@@ -1,3 +1,3 @@
-import Route from 'App/Routes/routes';
+// export { default as Route } from 'App/Routes/routes';
 
-export default Route;
+import 'App/Routes/routes';

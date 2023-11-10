@@ -4,7 +4,7 @@ import express from 'express';
 import helmet from 'helmet';
 import morgan from 'morgan';
 
-import Route from 'Routes/routes';
+// import { Route } from 'Routes';
 
 const App = express();
 
@@ -16,6 +16,8 @@ App.use(express.urlencoded({ extended: true }));
 
 const adapter = new ExpressAdapter(App);
 
-adapter.setRouter(Route);
+// adapter.setRouter(Route);
 
 export default adapter;
+
+import 'Routes';

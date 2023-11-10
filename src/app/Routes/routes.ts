@@ -3,6 +3,7 @@ import { Router } from '@hero-js/express-adapter';
 
 import Context from 'Contexts';
 import HelloHeroJsController from 'App/Http/Controllers/HelloHeroJsController';
+import adapter from 'App/app';
 
 const Route = new Router({ context: Context });
 
@@ -14,4 +15,6 @@ Route.get('/hello', HelloHeroJsController.handler('index')).middleware([
   HelloHeroJsController.name,
 ]);
 
-export default Route;
+adapter.setRouter(Route);
+
+// export default Route;
