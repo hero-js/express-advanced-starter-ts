@@ -1,7 +1,4 @@
-import {
-  Middleware as AdapterMiddleware,
-  RequestHandlerParams,
-} from '@hero-js/express-adapter';
+import { Middleware as AdapterMiddleware, RequestHandlerParams } from '@hero-js/express-adapter';
 import * as httpStatus from 'http-status-codes';
 
 import Config from 'Config';
@@ -9,8 +6,6 @@ import Context from 'Contexts';
 import IResponse from 'Interfaces/ApiResponse';
 
 abstract class Middleware extends AdapterMiddleware {
-  static moduleName = 'Kernel';
-
   config: typeof Config;
 
   context: typeof Context | null;
@@ -100,6 +95,8 @@ abstract class Middleware extends AdapterMiddleware {
       metaData,
     } as any;
 
+    this.response.statusCode = newResponse.statusCode;
+
     if (!status)
       newResponse.status = this.isErrorResponse(newResponse.statusCode)
         ? 'error'
@@ -111,7 +108,7 @@ abstract class Middleware extends AdapterMiddleware {
     if (data && !Array.isArray(data)) newResponse.data = [data];
 
     if (newResponse.status === 'success') {
-      newResponse.data = data ?? [];
+      newResponse.data = newResponse.data ?? [];
 
       newResponse.metaData = { ...metaData, ...rest };
     }
